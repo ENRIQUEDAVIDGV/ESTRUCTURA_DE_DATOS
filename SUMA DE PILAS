@@ -1,0 +1,113 @@
+package pilas;
+
+     import java.util.Scanner;
+     import java.util.Random;
+
+public class PILAS {
+   
+    public static void main(String[] args) {
+        
+        Scanner entrada = new Scanner(System.in);
+        Random random = new Random();
+        
+        int opt=0;
+        
+        //EN ESTE APARTADO SE LLENARAN LAS PILAS A Y B, MANDAREMOS LA PREGUNTA
+        //AL USUARIO PARA QUE ESTE MISMO EMPIECE EL PROCESO DE LLENADO. 
+        
+        System.out.println("INGRESAR El TAMAÑO DE LA PILA A");
+        int a=entrada.nextInt();
+        int pilaA[]=new int[a];
+        
+        System.out.println("INGRESAR El TAMAÑO DE LA PILA B");
+        int b=entrada.nextInt();
+        int pilaB[]=new int[b];
+        
+        if(a>=b){
+            
+        int pilaC[]=new int[a+b];
+        
+        //DESPUES SE MOSTRARA EL MENU CON DIFERENTES OPCIONES PARA EL USUARIO
+        
+        do{
+            System.out.println("\n1- LLENAR PILA A Y B, MOSTRAR LA SUMA DE PILA A Y B (PILA C)"
+                    + "\n2- VACIAR PILAS A Y B Y MOSTRAR LA SUMA DE ESTOS EN PILA C"
+                    + "\n3- SUMAR PILAS"
+                    + "\n6- SALIR"); 
+  
+            //PRIMERO TENEMOS QUE TENER UN VALOR ALEATORIO DEL 0 AL 100 DENTRO
+            //DE LOS LIMITES DE "A" EN LA PILA A, SE COMIENZA EL LLENADO DE LA 
+            //PILA
+            
+            switch(opt=entrada.nextInt()){
+                case 1: {
+                    for(int i=0; i<a;i++){ 
+                        pilaA[i]=(int)(Math.random()*100+1);
+                    
+            //PRIMERO TENEMOS QUE TENER UN VALOR ALEATORIO DEL 0 AL 200 DENTRO
+            //DE LOS LIMITES DE "B" EN LA PILA B, SE COMIENZA EL LLENADO DE LA 
+            //PILA            
+                        
+                    }
+                    for(int i=0; i<b;i++){
+                        pilaB[i]=(int)(random.nextInt(200-100+1)+100);
+                    }
+                }
+                    
+                case 2: {
+                    System.out.println("PILA A");
+                    for(int i=a-1;i>=0;i--){
+                        System.out.println(" " + pilaA[i]);
+        
+                    }
+                    System.out.println("PILA B");
+                    for(int i=b-1;i>=0;i--){
+                        System.out.println(" " + pilaB[i]);
+                
+                    }
+                }
+                    
+                //APARTIR DE AQUI SE EMPIEZAN A SUMAR LAS PILAS PERO A LA HORA 
+                //DE EJECUTAR NO ME MUESTRA EL RESULTADO EXACTO, CUANDO VACEO 
+                //LAS PILAS A Y B QUEDAN CON EL NUMERO QUE INGRESO EL USUARIO,
+                //POR EJEMPLO SI EL USUARIO INGRESO EL NUMERO 1 PARA LLENAR LA PILA A
+                //Y INGRESO EL NUMERO 1 PARA LLENAR LA PILA B SE SUMAN ESTOS MISMOS 
+                //DANDO COMO RESULTADO EN PILA C COMO 2, Y ASI PASA CON EL NUMERO 
+                //INGRESADO POR EL USUARIO SI ES 5 EN LAS DOS PILAS, LA PILA C ES 10,
+                //SI ES 10 EN LAS DOS PILAS, LA PILA C ES 20, SOLO SUMA EL NUMERO INGRESADO 
+                //POR EL USUARIO, NO ENCUENTRO EL ERROR Y NO SE QUE ES LO QUE SEA.
+                
+                case 3: {
+                    for (int i=0;i<a;i++){
+                        pilaA[i]=a;
+                    }
+                    for (int i=0;i<b;i++){
+                        pilaB[i]=b;
+                    }
+                }
+                case 4: {
+                    int tope=0;
+                    System.out.println("PILAS SUMADAS");
+                    for (int i = a-1; i>=0; i--) {
+                 
+                    pilaC[tope]=pilaA[i]+pilaB[i]; 
+                    tope++;    
+                        
+                    }
+                }
+                    
+                case 5: {
+                    System.out.println("PILA C");
+                    for(int i=a-1;i>=0;i--){
+                        System.out.println(" " + pilaC[i]);
+                   
+                    }
+                }      
+            }
+        }while(opt!=6);
+        }else{
+            int pilaC[]=new int[b];
+    
+}
+   }
+    }
